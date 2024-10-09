@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+</head>
+<body>
+    <label><input id="year" name="year" type="number" placeholder="Type year"></label>
+    <button type="button" id="button">Leap year check</button>
+    <div id="result"></div>
+    <script>
+        function IsLeapYear() {
+            let year = parseInt(document.getElementById("year").value);
+            let s = "";
+            if (year % 400 === 0)
+                s = year + " Is leap year";
+            else if (year % 100 === 0)
+                s = year + " Is not leap year";
+            else if (year % 4 === 0)
+                s = year + " Is leap year";
+            else
+                s = year + " Is not leap year";
+            
+            document.getElementById("result").innerHTML = s;
+        }
+        document.getElementById("button").addEventListener("click", IsLeapYear)
+    </script>
+</body>
+</html>
